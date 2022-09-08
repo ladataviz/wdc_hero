@@ -16,7 +16,7 @@
 
         var tableSchema = {
             // To complete
-            id: "",
+            id: "", // Mandatory id
             alias: "", // This is the name of the table
             columns: cols
         };
@@ -42,7 +42,7 @@
                 tableData.push({
 
                     // To complete (link between table data and API response)
-                    "id": resp[i].id
+                    //"id": resp[i].id
                 });
             }
 
