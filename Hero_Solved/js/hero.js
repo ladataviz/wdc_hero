@@ -11,6 +11,22 @@
             id: "name",
             alias: "Name",
             dataType: tableau.dataTypeEnum.string
+        },  {
+            id: "publisher",
+            alias: "Publisher",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "intelligence",
+            alias: "Intelligence",
+            dataType: tableau.dataTypeEnum.int
+        }, {
+            id: "strength",
+            alias: "Strength",
+            dataType: tableau.dataTypeEnum.int
+        }, {
+            id: "speed",
+            alias: "Speed",
+            dataType: tableau.dataTypeEnum.int
         }];
 
         var tableSchema = {
@@ -24,18 +40,26 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
+        
         $.getJSON("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json", function(resp) {
-            var feat = resp,
-                tableData = [];
-            console.log(feat)
+            
+            console.log(resp)
+            
+            var tableData = [];
+            
             // Iterate over the JSON object
-            for (var i = 0, len = feat.length; i < len; i++) {
-                console.log(feat[i])
+            for (var i = 0, len = resp.length; i < len; i++) {
+                
+                console.log(resp[i])
 
                 tableData.push({
-                    "id": feat[i].id,
-                    "name": feat[i].name,
-                                });
+                    "id": resp[i].id,
+                    "name": resp[i].name,
+                    "publisher": resp[i].biography.publisher,
+                    'intelligence': resp[i].powerstats.intelligence,
+                    'strength': resp[i].powerstats.strength,
+                    'speed': resp[i].powerstats.speed,
+                });
             }
 
             table.appendRows(tableData);
