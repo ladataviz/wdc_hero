@@ -1,6 +1,9 @@
-# wdc_hero
+# Web Data Connector Workshop
 
-https://bit.ly/tableau_wdc
+## Simulator
+https://extraordinary-cocada-65b1e8.netlify.app/simulator/
 
-Base WDC
+## Earthquake
 https://extraordinary-cocada-65b1e8.netlify.app/examples/html/earthquakeusgs
+
+
